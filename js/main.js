@@ -1,2 +1,13 @@
-TweenMax.to('#box',2,{color:'blue',marginTop:200,rotation:360,scale:0.3});
+var start = $("#start");
+var offset = start.offset();
+console.log(offset);
+
+$('.segment').click(function(){
+    var segmentOffset = $(this).offset();
+    var deltaOffset = segmentOffset.top - offset.top ;
+    TweenMax.to('#box',1,{color:'blue',top:deltaOffset,rotation:360});
+    // console.log();
+});
+
+
 console.log('tween started');
